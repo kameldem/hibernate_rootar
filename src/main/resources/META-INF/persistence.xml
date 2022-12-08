@@ -5,6 +5,7 @@
              version="3.0">
     <persistence-unit name="fr.hc.rootar">
 
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1401;database=rootar;encrypt=false"/>

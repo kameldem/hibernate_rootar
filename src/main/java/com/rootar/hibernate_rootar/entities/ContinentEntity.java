@@ -8,13 +8,13 @@ import jakarta.persistence.*;
 public class ContinentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID_CONTINENT")
+    @Column(name = "ID_CONTINENT", nullable = false)
     private int idContinent;
     @Basic
-    @Column(name = "NOM_CONTINENT_FR")
+    @Column(name = "NOM_CONTINENT_FR", nullable = false, length = 50)
     private String nomContinentFr;
     @Basic
-    @Column(name = "NOM_CONTINENT_ANG")
+    @Column(name = "NOM_CONTINENT_ANG", nullable = false, length = 25)
     private String nomContinentAng;
 
     public int getIdContinent() {
@@ -42,11 +42,11 @@ public class ContinentEntity {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        ContinentEntity that = (ContinentEntity) object;
+        ContinentEntity that = (ContinentEntity) o;
 
         if (idContinent != that.idContinent) return false;
         if (nomContinentFr != null ? !nomContinentFr.equals(that.nomContinentFr) : that.nomContinentFr != null)

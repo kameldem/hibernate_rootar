@@ -3,6 +3,7 @@ package com.rootar.hibernate_rootar.entities;
 import jakarta.persistence.*;
 
 @Entity
+@NamedQuery(name = "pays.getAll", query ="Select p FROM PaysEntity  p order by p.idPays")
 @Table(name = "PAYS", schema = "dbo", catalog = "ROOTAR")
 public class PaysEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,6 +50,8 @@ public class PaysEntity {
     @Column(name = "ID_VILLE")
     private int idVille;
 
+    @ManyToOne
+    @JoinColumn
     public int getIdPays() {
         return idPays;
     }

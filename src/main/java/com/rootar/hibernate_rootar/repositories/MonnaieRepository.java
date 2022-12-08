@@ -18,7 +18,6 @@ public class MonnaieRepository {
         MonnaieEntity monnaie = entityManager.find(MonnaieEntity.class, id);
         return monnaie;
     }
-
     @Transactional
     public boolean update(MonnaieEntity monnaie) {
 
@@ -29,14 +28,12 @@ public class MonnaieRepository {
         entityManager.getTransaction().commit();
         return true;
     }
-
     @Transactional
-    public void insert(MonnaieEntity monnaie) {
+    public void create(MonnaieEntity monnaie) {
         entityManager.getTransaction().begin();
         entityManager.persist(monnaie);
         entityManager.getTransaction().commit();
     }
-
     @Transactional
     public boolean delete(MonnaieEntity monnaie) {
         MonnaieEntity deletingMonnaie = getById(monnaie.getIdMonnaie());
