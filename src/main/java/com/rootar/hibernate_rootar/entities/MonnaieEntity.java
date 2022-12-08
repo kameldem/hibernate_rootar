@@ -3,6 +3,7 @@ package com.rootar.hibernate_rootar.entities;
 import jakarta.persistence.*;
 
 @Entity
+@NamedQuery(name = "monnaie.getAll", query ="Select m FROM MonnaieEntity  m order by m.idMonnaie")
 @Table(name = "MONNAIE", schema = "dbo", catalog = "ROOTAR")
 public class MonnaieEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
