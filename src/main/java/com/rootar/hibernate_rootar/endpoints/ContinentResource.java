@@ -1,8 +1,10 @@
 package com.rootar.hibernate_rootar.endpoints;
 
 
+import com.rootar.hibernate_rootar.entities.ContinentEntity;
 import com.rootar.hibernate_rootar.entities.MonnaieEntity;
-import com.rootar.hibernate_rootar.repositories.MonnaieRepository;
+import com.rootar.hibernate_rootar.repositories.ContinentRepository;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.ws.rs.*;
@@ -12,57 +14,43 @@ import jakarta.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/monnaie")
-@Tag(name = "Monnaies")
+@Path("/continent")
+@Tag(name="Continent")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class MonnaieResource {
+public class ContinentResource {
 
-    MonnaieRepository monnaieRepository = new MonnaieRepository();
+    ContinentRepository continentRepository = new ContinentRepository();
     @GET
+
+    @Operation(summary = "Recuperation des continents")
     public Response getAll() {
-        List<MonnaieEntity> listMonnaies= monnaieRepository.getAll();
-        return Response.ok(listMonnaies).build();
+        List<ContinentEntity> continents = continentRepository.getAll();
+        return Response.ok(continents).build();
     }
 
     @GET
     @Path("{id}")
+
     public Response getById(@PathParam("id") Integer id) {
-        MonnaieEntity monnaie = monnaieRepository.getById(id);
-        return Response.ok(monnaie).build();
-    }
-    @POST
-    public Response insert(MonnaieEntity monnaie){
-        if(monnaie == null){
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-        monnaieRepository.insert(monnaie);
-            return Response.ok(monnaie).status(Response.Status.CREATED).build();
-
-
-
+        ContinentEntity continent = continentRepository.getById(id);
+        return Response.ok(continent).build();
     }
 
 
     @PUT
     @ApiResponse(responseCode = "204", description = "Modifié")
     @ApiResponse(responseCode = "404", description = "non trouvée !")
-    public Response update(MonnaieEntity monnaie){
-
-        if(monnaie == null ){
+    public Response update(ContinentEntity continent){
+        if(continent == null ){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-
-        if(monnaieRepository.update(monnaie)) {
-
+        if(continentRepository.update(continent)) {
             return Response.ok(204).build();
         }
         else{
             return  Response.status(Response.Status.CONFLICT).build();
-
         }
-
-
     }
 
     @DELETE
@@ -70,13 +58,13 @@ public class MonnaieResource {
     @ApiResponse(responseCode = "204", description = "Supprimé")
     @ApiResponse(responseCode = "404", description = "non trouvée !")
     public Response delete(@PathParam("id") Integer id){
-    MonnaieEntity monnaie = new MonnaieEntity();
-    monnaie.setIdMonnaie(id);
+        ContinentEntity continent = new ContinentEntity();
+        continent.setIdContinent(id);
         if(id == null ){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        if(monnaieRepository.delete(monnaie)){
+        if(continentRepository.delete(continent)){
 
             return Response.ok(204).build();
         }
@@ -85,4 +73,18 @@ public class MonnaieResource {
 
         }
     }
+
+    @POST
+    public Response insert(ContinentEntity continent){
+
+            if(continent == null){
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
+            continentRepository.insert(continent);
+            return Response.ok(continent).status(Response.Status.CREATED).build();
+
+
+
+        }
+
 }

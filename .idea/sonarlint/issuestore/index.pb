@@ -38,3 +38,7 @@ J
 src/main/webapp/index.html,1\3\1337d72a3b1928dba82aa5210f5cdc0e88ce895b
 T
 $src/main/webapp/oauth2-redirect.html,3\0\308067d25d0b70edc7723d25a54b5d15473732ec
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+l
+<src/main/java/com/rootar/hibernate_rootar/MyApplication.java,b\5\b5332bae9cd40c80ed655dd219604f699a1cab0e

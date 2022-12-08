@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-223.7571.182">
-    <data-source name="rootar@localhost" uuid="44d2726a-e38a-4697-9422-500f1ce0f0c7">
+  <component name="dataSourceStorageLocal" created-in="IU-221.6008.13">
+    <data-source name="rootar@localhost" uuid="d4fda0d2-fffa-4d69-9402-7b2f54230de1">
       <database-info product="Microsoft SQL Server" version="15.00.4236" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 11.2 for SQL Server" driver-version="11.2.0.0" dbms="MSSQL" exact-version="15.0.4236" exact-driver-version="11.2">
         <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
@@ -11,8 +11,8 @@
       <user-name>sa</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="ROOTAR">
-            <node kind="schema" negative="1" />
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
           </node>
         </introspection-scope>
       </schema-mapping>
