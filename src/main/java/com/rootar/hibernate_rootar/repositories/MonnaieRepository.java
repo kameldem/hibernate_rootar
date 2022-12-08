@@ -13,4 +13,8 @@ public class MonnaieRepository {
     public List<MonnaieEntity> getAll() {
         return entityManager.createNamedQuery("monnaie.getAll", MonnaieEntity.class).getResultList();
     }
+    public MonnaieEntity getById(int id) {
+        MonnaieEntity monnaie = entityManager.find(MonnaieEntity.class, id);
+        return monnaie;
+    }
 }

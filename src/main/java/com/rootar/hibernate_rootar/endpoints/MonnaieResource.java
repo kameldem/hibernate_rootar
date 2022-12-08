@@ -24,14 +24,14 @@ public class MonnaieResource {
         return Response.ok(listMonnaies).build();
     }
 
-   /* @GET
+    @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getById(@PathParam("id") Integer id) {
-        Monnaie monnaie = DAOFactory.getMonnaieDAO().getByID(id);
+        MonnaieEntity monnaie = monnaieRepository.getById(id);
         return Response.ok(monnaie).build();
     }
-    @POST
+   /* @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response insert(Monnaie monnaie){
         if(monnaie == null){

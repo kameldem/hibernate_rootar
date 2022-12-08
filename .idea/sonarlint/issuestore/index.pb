@@ -38,5 +38,3 @@ J
 src/main/webapp/index.html,1\3\1337d72a3b1928dba82aa5210f5cdc0e88ce895b
 T
 $src/main/webapp/oauth2-redirect.html,3\0\308067d25d0b70edc7723d25a54b5d15473732ec
-V
-&src/main/webapp/swagger-initializer.js,c\6\c62bde92f5c0bced3a82c459c1995cddfeacfdd9
