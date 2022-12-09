@@ -9,16 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84a8aee4-2014-46b0-b958-103bbc07e94a" name="Changes" comment="9update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/dto/ContinentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/dto/PaysDto.java" afterDir="false" />
+    <list default="true" id="84a8aee4-2014-46b0-b958-103bbc07e94a" name="Changes" comment="paysresour">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/endpoints/ContinentResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/endpoints/ContinentResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/endpoints/PaysResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/endpoints/PaysResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/dto/PaysDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/dto/PaysDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/entities/ContinentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/entities/ContinentEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/entities/PaysEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/entities/PaysEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/repositories/ContinentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/repositories/ContinentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/repositories/PaysRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rootar/hibernate_rootar/repositories/PaysRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

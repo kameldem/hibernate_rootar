@@ -1,59 +1,32 @@
 package com.rootar.hibernate_rootar.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.annotation.processing.Generated;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @NamedQuery(name = "continent.getAll", query ="Select c FROM ContinentEntity  c order by c.idContinent")
 @Table(name = "CONTINENT", schema = "dbo", catalog = "ROOTAR")
 public class ContinentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID_CONTINENT", nullable = false)
+    @Column(name = "ID_CONTINENT")
     private int idContinent;
     @Basic
-    @Column(name = "NOM_CONTINENT_FR", nullable = false, length = 50)
+    @Column(name = "NOM_CONTINENT_FR")
     private String nomContinentFr;
     @Basic
-    @Column(name = "NOM_CONTINENT_ANG", nullable = false, length = 25)
+    @Column(name = "NOM_CONTINENT_ANG")
     private String nomContinentAng;
 
     @OneToMany (fetch = FetchType.LAZY)
-    @JoinColumn (name = "ID_PAYS")
+    @JoinColumn (name = "ID_CONTINENT")
     private List<PaysEntity> pays;
-
-    public List<PaysEntity> getPays() {
-        return pays;
-    }
-
-    public void setPays(List<PaysEntity> pays) {
-        this.pays = pays;
-    }
-
-    public int getIdContinent() {
-        return idContinent;
-    }
-
-    public void setIdContinent(int idContinent) {
-        this.idContinent = idContinent;
-    }
-
-    public String getNomContinentFr() {
-        return nomContinentFr;
-    }
-
-    public void setNomContinentFr(String nomContinentFr) {
-        this.nomContinentFr = nomContinentFr;
-    }
-
-    public String getNomContinentAng() {
-        return nomContinentAng;
-    }
-
-    public void setNomContinentAng(String nomContinentAng) {
-        this.nomContinentAng = nomContinentAng;
-    }
 
     @Override
     public boolean equals(Object o) {

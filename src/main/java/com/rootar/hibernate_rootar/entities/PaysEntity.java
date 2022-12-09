@@ -1,8 +1,12 @@
 package com.rootar.hibernate_rootar.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @NamedQuery(name = "pays.getAll", query ="Select p FROM PaysEntity  p order by p.idPays")
 @Table(name = "PAYS", schema = "dbo", catalog = "ROOTAR")
 public class PaysEntity {
@@ -54,125 +58,6 @@ public class PaysEntity {
     @JoinColumn (name = "ID_CONTINENT")
     private ContinentEntity continent;
 
-    public void setContinent(ContinentEntity continent) {
-        this.continent = continent;
-    }
-
-    public ContinentEntity getContinent() {
-        return continent;
-    }
-
-    public int getIdPays() {
-        return idPays;
-    }
-
-    public void setIdPays(int idPays) {
-        this.idPays = idPays;
-    }
-
-    public String getCodePays() {
-        return codePays;
-    }
-
-    public void setCodePays(String codePays) {
-        this.codePays = codePays;
-    }
-
-    public String getNomPaysFr() {
-        return nomPaysFr;
-    }
-
-    public void setNomPaysFr(String nomPaysFr) {
-        this.nomPaysFr = nomPaysFr;
-    }
-
-    public String getNomPaysAng() {
-        return nomPaysAng;
-    }
-
-    public void setNomPaysAng(String nomPaysAng) {
-        this.nomPaysAng = nomPaysAng;
-    }
-
-    public String getNationalite() {
-        return nationalite;
-    }
-
-    public void setNationalite(String nationalite) {
-        this.nationalite = nationalite;
-    }
-
-    public int getNombreHabitant() {
-        return nombreHabitant;
-    }
-
-    public void setNombreHabitant(int nombreHabitant) {
-        this.nombreHabitant = nombreHabitant;
-    }
-
-    public int getSuperficie() {
-        return superficie;
-    }
-
-    public void setSuperficie(int superficie) {
-        this.superficie = superficie;
-    }
-
-    public String getDevise() {
-        return devise;
-    }
-
-    public void setDevise(String devise) {
-        this.devise = devise;
-    }
-
-    public String getFeteNationale() {
-        return feteNationale;
-    }
-
-    public void setFeteNationale(String feteNationale) {
-        this.feteNationale = feteNationale;
-    }
-
-    public String getIndicatifTelephonique() {
-        return indicatifTelephonique;
-    }
-
-    public void setIndicatifTelephonique(String indicatifTelephonique) {
-        this.indicatifTelephonique = indicatifTelephonique;
-    }
-
-   /* public int getIdContinent() {
-        return idContinent;
-    }
-
-    public void setIdContinent(int idContinent) {
-        this.idContinent = idContinent;
-    }*/
-
-    public int getIdMonnaie() {
-        return idMonnaie;
-    }
-
-    public void setIdMonnaie(int idMonnaie) {
-        this.idMonnaie = idMonnaie;
-    }
-
-    public Integer getIdVisas() {
-        return idVisas;
-    }
-
-    public void setIdVisas(Integer idVisas) {
-        this.idVisas = idVisas;
-    }
-
-    public int getIdVille() {
-        return idVille;
-    }
-
-    public void setIdVille(int idVille) {
-        this.idVille = idVille;
-    }
 
     @Override
     public boolean equals(Object object) {
@@ -184,7 +69,7 @@ public class PaysEntity {
         if (idPays != that.idPays) return false;
         if (nombreHabitant != that.nombreHabitant) return false;
         if (superficie != that.superficie) return false;
-      //  if (idContinent != that.idContinent) return false;
+        //if (idContinent != that.idContinent) return false;
         if (idMonnaie != that.idMonnaie) return false;
         if (idVille != that.idVille) return false;
         if (codePays != null ? !codePays.equals(that.codePays) : that.codePays != null) return false;
@@ -213,7 +98,7 @@ public class PaysEntity {
         result = 31 * result + (devise != null ? devise.hashCode() : 0);
         result = 31 * result + (feteNationale != null ? feteNationale.hashCode() : 0);
         result = 31 * result + (indicatifTelephonique != null ? indicatifTelephonique.hashCode() : 0);
-      //  result = 31 * result + idContinent;
+       // result = 31 * result + idContinent;
         result = 31 * result + idMonnaie;
         result = 31 * result + (idVisas != null ? idVisas.hashCode() : 0);
         result = 31 * result + idVille;

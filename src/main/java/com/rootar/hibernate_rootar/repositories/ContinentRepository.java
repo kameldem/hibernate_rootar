@@ -14,7 +14,7 @@ public class ContinentRepository {
     private EntityManager entityManager = Persistence.createEntityManagerFactory("fr.hc.rootar").createEntityManager();
 
     public List<ContinentDto> getAll() {
-        return entityManager.createNamedQuery("continent.getAll", ContinentDto.class).getResultList();
+        return ContinentDto.toContinentDtoList(entityManager.createNamedQuery("continent.getAll", ContinentEntity.class).getResultList());
     }
     public ContinentEntity getById(int id) {
         ContinentEntity continent = entityManager.find(ContinentEntity.class, id);

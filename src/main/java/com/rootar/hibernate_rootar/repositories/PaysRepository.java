@@ -14,7 +14,7 @@ public class PaysRepository {
 
 
     public List<PaysDto> getAll() {
-        return entityManager.createNamedQuery("pays.getAll", PaysDto.class).getResultList();
+        return PaysDto.toPaysDtoList(entityManager.createNamedQuery("pays.getAll", PaysEntity.class).getResultList());
     }
 
     public PaysEntity getById(int id) {

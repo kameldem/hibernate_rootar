@@ -32,7 +32,7 @@ public class PaysDto {
     }
     @Getter
     @Setter
-    private class Continent{
+    class Continent{
         private int id;
         private String nom;
 
