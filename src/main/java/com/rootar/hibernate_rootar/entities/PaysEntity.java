@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -58,6 +60,9 @@ public class PaysEntity {
     @JoinColumn (name = "ID_CONTINENT")
     private ContinentEntity continent;
 
+    @OneToMany (fetch = FetchType.LAZY)
+    @JoinColumn (name = "ID_REGION")
+    private List<RegionEntity> regions;
 
     @Override
     public boolean equals(Object object) {
