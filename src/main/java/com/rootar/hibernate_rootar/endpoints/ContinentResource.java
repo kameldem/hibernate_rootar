@@ -1,6 +1,7 @@
 package com.rootar.hibernate_rootar.endpoints;
 
 
+import com.rootar.hibernate_rootar.dto.ContinentDto;
 import com.rootar.hibernate_rootar.entities.ContinentEntity;
 import com.rootar.hibernate_rootar.entities.MonnaieEntity;
 import com.rootar.hibernate_rootar.repositories.ContinentRepository;
@@ -25,7 +26,7 @@ public class ContinentResource {
 
     @Operation(summary = "Recuperation des continents")
     public Response getAll() {
-        List<ContinentEntity> continents = continentRepository.getAll();
+        List<ContinentDto> continents = continentRepository.getAll();
         return Response.ok(continents).build();
     }
 

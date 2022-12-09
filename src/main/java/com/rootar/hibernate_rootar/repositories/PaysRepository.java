@@ -1,5 +1,6 @@
 package com.rootar.hibernate_rootar.repositories;
 
+import com.rootar.hibernate_rootar.dto.PaysDto;
 import com.rootar.hibernate_rootar.entities.MonnaieEntity;
 import com.rootar.hibernate_rootar.entities.PaysEntity;
 import jakarta.persistence.EntityManager;
@@ -12,8 +13,8 @@ public class PaysRepository {
     private EntityManager entityManager = Persistence.createEntityManagerFactory("fr.hc.rootar").createEntityManager();
 
 
-    public List<PaysEntity> getAll() {
-        return entityManager.createNamedQuery("pays.getAll", PaysEntity.class).getResultList();
+    public List<PaysDto> getAll() {
+        return entityManager.createNamedQuery("pays.getAll", PaysDto.class).getResultList();
     }
 
     public PaysEntity getById(int id) {

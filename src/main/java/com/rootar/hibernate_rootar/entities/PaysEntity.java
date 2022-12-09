@@ -37,9 +37,9 @@ public class PaysEntity {
     @Basic
     @Column(name = "INDICATIF_TELEPHONIQUE")
     private String indicatifTelephonique;
-    @Basic
+    /*@Basic
     @Column(name = "ID_CONTINENT")
-    private int idContinent;
+    private int idContinent;*/
     @Basic
     @Column(name = "ID_MONNAIE")
     private int idMonnaie;
@@ -50,8 +50,18 @@ public class PaysEntity {
     @Column(name = "ID_VILLE")
     private int idVille;
 
-    @ManyToOne
-    @JoinColumn
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "ID_CONTINENT")
+    private ContinentEntity continent;
+
+    public void setContinent(ContinentEntity continent) {
+        this.continent = continent;
+    }
+
+    public ContinentEntity getContinent() {
+        return continent;
+    }
+
     public int getIdPays() {
         return idPays;
     }
@@ -132,13 +142,13 @@ public class PaysEntity {
         this.indicatifTelephonique = indicatifTelephonique;
     }
 
-    public int getIdContinent() {
+   /* public int getIdContinent() {
         return idContinent;
     }
 
     public void setIdContinent(int idContinent) {
         this.idContinent = idContinent;
-    }
+    }*/
 
     public int getIdMonnaie() {
         return idMonnaie;
@@ -174,7 +184,7 @@ public class PaysEntity {
         if (idPays != that.idPays) return false;
         if (nombreHabitant != that.nombreHabitant) return false;
         if (superficie != that.superficie) return false;
-        if (idContinent != that.idContinent) return false;
+      //  if (idContinent != that.idContinent) return false;
         if (idMonnaie != that.idMonnaie) return false;
         if (idVille != that.idVille) return false;
         if (codePays != null ? !codePays.equals(that.codePays) : that.codePays != null) return false;
@@ -203,10 +213,12 @@ public class PaysEntity {
         result = 31 * result + (devise != null ? devise.hashCode() : 0);
         result = 31 * result + (feteNationale != null ? feteNationale.hashCode() : 0);
         result = 31 * result + (indicatifTelephonique != null ? indicatifTelephonique.hashCode() : 0);
-        result = 31 * result + idContinent;
+      //  result = 31 * result + idContinent;
         result = 31 * result + idMonnaie;
         result = 31 * result + (idVisas != null ? idVisas.hashCode() : 0);
         result = 31 * result + idVille;
         return result;
     }
+
+
 }

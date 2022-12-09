@@ -2,6 +2,8 @@ package com.rootar.hibernate_rootar.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @NamedQuery(name = "continent.getAll", query ="Select c FROM ContinentEntity  c order by c.idContinent")
 @Table(name = "CONTINENT", schema = "dbo", catalog = "ROOTAR")
@@ -16,6 +18,18 @@ public class ContinentEntity {
     @Basic
     @Column(name = "NOM_CONTINENT_ANG", nullable = false, length = 25)
     private String nomContinentAng;
+
+    @OneToMany (fetch = FetchType.LAZY)
+    @JoinColumn (name = "ID_PAYS")
+    private List<PaysEntity> pays;
+
+    public List<PaysEntity> getPays() {
+        return pays;
+    }
+
+    public void setPays(List<PaysEntity> pays) {
+        this.pays = pays;
+    }
 
     public int getIdContinent() {
         return idContinent;
@@ -64,4 +78,7 @@ public class ContinentEntity {
         result = 31 * result + (nomContinentAng != null ? nomContinentAng.hashCode() : 0);
         return result;
     }
+
+
+
 }

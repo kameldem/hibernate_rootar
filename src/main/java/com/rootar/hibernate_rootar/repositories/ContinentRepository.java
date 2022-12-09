@@ -1,5 +1,6 @@
 package com.rootar.hibernate_rootar.repositories;
 
+import com.rootar.hibernate_rootar.dto.ContinentDto;
 import com.rootar.hibernate_rootar.entities.ContinentEntity;
 import com.rootar.hibernate_rootar.entities.MonnaieEntity;
 import jakarta.persistence.EntityManager;
@@ -12,8 +13,8 @@ public class ContinentRepository {
 
     private EntityManager entityManager = Persistence.createEntityManagerFactory("fr.hc.rootar").createEntityManager();
 
-    public List<ContinentEntity> getAll() {
-        return entityManager.createNamedQuery("continent.getAll", ContinentEntity.class).getResultList();
+    public List<ContinentDto> getAll() {
+        return entityManager.createNamedQuery("continent.getAll", ContinentDto.class).getResultList();
     }
     public ContinentEntity getById(int id) {
         ContinentEntity continent = entityManager.find(ContinentEntity.class, id);

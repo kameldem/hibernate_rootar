@@ -1,5 +1,6 @@
 package com.rootar.hibernate_rootar.endpoints;
 
+import com.rootar.hibernate_rootar.dto.PaysDto;
 import com.rootar.hibernate_rootar.entities.MonnaieEntity;
 import com.rootar.hibernate_rootar.entities.PaysEntity;
 import com.rootar.hibernate_rootar.repositories.MonnaieRepository;
@@ -21,7 +22,7 @@ public class PaysResource {
     PaysRepository paysRepository = new PaysRepository();
     @GET
     public Response getAll() {
-        List<PaysEntity> listPays= paysRepository.getAll();
+        List<PaysDto> listPays= paysRepository.getAll();
         return Response.ok(listPays).build();
     }
     @GET
